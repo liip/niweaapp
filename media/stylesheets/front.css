@@ -85,6 +85,10 @@
 	line-height: 1.4em;
 }
 
+.container.story .content .story img {
+	width: 735px;
+}
+
 .content img {
 	margin: 0;
 }
