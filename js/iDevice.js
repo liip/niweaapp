@@ -134,7 +134,10 @@ application = (function () {
 			}
 			
 			if ('page' === type) {
-				localStorage.setItem('currentPage', uri);
+				try {
+					localStorage.setItem('currentPage', uri);
+				} catch (e) {
+				}
 				$.address.value(uri);
 			}
 		},
