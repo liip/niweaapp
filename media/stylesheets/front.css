@@ -1,0 +1,14 @@
+.header h1 {
+	text-align: center;
+}
+
+.content h2 {
+	color: #027a9c;
+	margin-bottom: 0.4em;
+	font-size: 2.1em;
+}
+
+.content p {
+	margin: 0 0 1em 0;
+	font-size: 0.95em;
+}
