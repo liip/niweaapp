@@ -50,6 +50,9 @@ NIWEA.Storage = function () {
 			if (node && data.items[i].title ) {
 				$("a .title",node).text(data.items[i].title);
 				$("a .lead",node).text(data.items[i].shortlead);
+				if (i == 0) {
+					$("a  img",node).attr("src",data.items[i].image_big_ipad);	
+				}
 			} else { 
 			}
 		}
