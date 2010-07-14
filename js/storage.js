@@ -2,7 +2,7 @@
 NIWEA = {}
 NIWEA.Storage = function () {
 	//"private" variables:
-	var categoryCount = 0;
+	var categoryCount = 10;
 	var myPrivateVar = "I can be accessed only from within YAHOO.myProject.myModule."
 	var categories = {}
 	var stories = [];
@@ -46,8 +46,9 @@ NIWEA.Storage = function () {
 	
 	var initContent = function() {
 		for (var i = 0; i <= categoryCount;  i++) {
-			drawCategory(i);
+			
 		}
+		drawCategory(0);
 		refreshContent();
 	}
 	

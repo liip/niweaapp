@@ -8,9 +8,12 @@ modules.story = {
 
 
 modules.category = {
-	stub: '<div class="story big">					<img src="media/images/picture_big.jpg" alt="" />					<h2 class="title">Beamte müssen iPhones abgeben</h2>					<p class="lead">Schluss mit iPhones: In der ganzen Bundesverwaltung dürfen keine neuen mehr eingeführt werden. Mindestens in einer Abteilung wurden die Geräte von Apple sogar eingesammelt. Ein IT-Experte findet das Ansinnen widersinnig.</p>				</div>				<div class="story small">					<h2 class="title">Die Spitze der ’Ndrangheta ist kaltgestellt</h2>					<p class="lead">Italiens Polizei hat über 300 Mitglieder der kalabresischen Mafia verhaftet, auch die Nummer eins.</p>				</div>				<div class="story small">					<h2 class="title">Neues Dokument belastet Minister Woerth</h2>					<p class="lead">Am Montagabend hatte Frankreichs Präsident Sarkozy seinen umstrittenen Arbeitsminister Eric Woerth als «zutiefst…</p>				</div>				<div class="story small">					<h2 class="title">Die Spitze der ’Ndrangheta ist kaltgestellt</h2>					<p class="lead">Italiens Polizei hat über 300 Mitglieder der kalabresischen Mafia verhaftet, auch die Nummer eins.</p>				</div>				<div class="story small">					<h2 class="title">Die Spitze der ’Ndrangheta ist kaltgestellt</h2>					<p class="lead">Italiens Polizei hat über 300 Mitglieder der kalabresischen Mafia verhaftet, auch die Nummer eins.</p>				</div>',
+	stub: '<div class="story big">					<img width="640" height="385" src="" alt="" />					<h2 class="title">Beamte müssen iPhones abgeben</h2>					<p class="lead">Schluss mit iPhones: In der ganzen Bundesverwaltung dürfen keine neuen mehr eingeführt werden. Mindestens in einer Abteilung wurden die Geräte von Apple sogar eingesammelt. Ein IT-Experte findet das Ansinnen widersinnig.</p>				</div>				<div class="story small">					<h2 class="title">Die Spitze der ’Ndrangheta ist kaltgestellt</h2>					<p class="lead">Italiens Polizei hat über 300 Mitglieder der kalabresischen Mafia verhaftet, auch die Nummer eins.</p>				</div>				<div class="story small">					<h2 class="title">Neues Dokument belastet Minister Woerth</h2>					<p class="lead">Am Montagabend hatte Frankreichs Präsident Sarkozy seinen umstrittenen Arbeitsminister Eric Woerth als «zutiefst…</p>				</div>				<div class="story small">					<h2 class="title">Die Spitze der ’Ndrangheta ist kaltgestellt</h2>					<p class="lead">Italiens Polizei hat über 300 Mitglieder der kalabresischen Mafia verhaftet, auch die Nummer eins.</p>				</div>				<div class="story small">					<h2 class="title">Die Spitze der ’Ndrangheta ist kaltgestellt</h2>					<p class="lead">Italiens Polizei hat über 300 Mitglieder der kalabresischen Mafia verhaftet, auch die Nummer eins.</p>				</div>',
 	 init: function(data) {
-		NIWEA.Storage.updateCategory(0);
+		 if (!data.id) {
+			 data.id = 0;
+		 }
+		NIWEA.Storage.updateCategory(data.id);
 	}
 }
 	
