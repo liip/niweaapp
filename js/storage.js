@@ -88,7 +88,6 @@ NIWEA.Storage = function () {
 						$(".lead",node).text(item.shortlead);
 						
 						
-						
 						node.attr("id","story_" + item.id);
 						if (i == 0) {
 							$("img",node).attr("src",item.image_big_ipad);	
@@ -116,7 +115,14 @@ NIWEA.Storage = function () {
 				
 				$(".lead",node).text(item.lead);
 				
+				// FIXME!!
+				var context = "";
+				for(i=0; i < item.context_stories.length; i++){
+					c = item.context_stories[i];
+					context +="<a href='"+c.context_url+"'>"+c.context_title+"</a><br />";
+				}
 				
+				$(".context_stories",node).html(context);				
 				
 				node.attr("id","story_" + item.id);
 				$("img",node).attr("src",item.image_big_ipad);
