@@ -1,20 +1,55 @@
 .header {
-	border-bottom: 2px solid #949494;
-	margin-bottom: 0.6em;
+	position: relative;
+	border-bottom: 2px solid #EEE;
+	margin: 0.2em 0 0.6em 0;
 }
 
 .header h1 {
 	text-align: center;
-	margin: 0;
+	margin: 0 0 0.4em 0;
 }
 
-.content h2 {
+.header h2,
+.header p {
+	position: absolute;
+	bottom: 0;
+	margin: 0 0 0.3em 0;
+}
+
+.header h2 {
+	font-size: 1.2em;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: normal;
+}
+
+.header p {
+	right: 0;
+	margin-bottom: 0.5em;
+	color: #666;
+	font-size: 0.9em;
+}
+
+.content .story a {
+	display: block;
+	text-decoration: none;
+	color: #111;
+}
+
+.content .story .title {
+	display: block;
 	color: #027a9c;
-	margin: 0.2em 0 0.4em 0;
-	font-size: 2.1em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0.4em 0 0.2em 0;
+	font-size: 2em;
 }
 
-.content p {
+.content .story .lead {
+	display: block;
 	margin: 0 0 1em 0;
 	font-size: 0.95em;
+}
+
+.content img {
+	margin: 0;
 }
