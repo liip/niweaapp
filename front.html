@@ -20,7 +20,7 @@
 					<img id="logo"  src="media/images/logo.png" width="300" height="61" alt="Tages-Anzeiger" />
 				</h1>
 				<h2 class="category" >
-				<select id="category" onclick="application.setAddress('page/category?id=' + $(this).val())">
+				<select id="category" onchange="application.setAddress('page/category?id=' + $(this).val())">
 				<option value="0">Front</option>
 				<option value="1">Zürich</option>
 				<option value="2">Schweiz</option>
