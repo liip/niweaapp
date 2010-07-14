@@ -3,6 +3,7 @@
 	width: 720px;
 	padding-top: 395px;
 	border-right: 0;
+	border-bottom: 1px solid #DDD;
 }
 
 .content .story.big img {
