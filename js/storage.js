@@ -59,27 +59,29 @@ NIWEA.Storage = function () {
 		var data = getJsonFromStorage(id);
 		// do the actual drawing here
 		if (data && data.items) {
-			var nodes = $('.content div');
-			
-			for (var i = 0;  i < data.items.length; i++) {
-				var node = nodes.eq(i);;
-				var item = data.items[i];
-				if (node && item.title ) {
-					node.unbind("click",showStoryClick);
-					node.bind("click",showStoryClick);
-					$(".title",node).html(item.title);
-					
-					
-					
-					$(".lead",node).text(item.shortlead);
-					
-					
-					
-					node.attr("id","story_" + item.id);
-					if (i == 0) {
-						$("img",node).attr("src",item.image_big_ipad);	
+			//only draw, if there's a "big" element
+			if ($('.big').length) {
+				var nodes = $('.content div');
+				for (var i = 0;  i < data.items.length; i++) {
+					var node = nodes.eq(i);;
+					var item = data.items[i];
+					if (node && item.title ) {
+						node.unbind("click",showStoryClick);
+						node.bind("click",showStoryClick);
+						$(".title",node).html(item.title);
+						
+						
+						
+						$(".lead",node).text(item.shortlead);
+						
+						
+						
+						node.attr("id","story_" + item.id);
+						if (i == 0) {
+							$("img",node).attr("src",item.image_big_ipad);	
+						}
+					} else { 
 					}
-				} else { 
 				}
 			}
 		}
