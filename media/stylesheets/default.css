@@ -2,4 +2,5 @@ body {
 	font-family: Georgia, serif;
 	text-rendering: optimizeLegibility;
 	margin: 0.8em 1em;
+	line-height: 1.4em;
 }

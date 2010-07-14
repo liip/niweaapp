@@ -2,6 +2,7 @@
 	position: relative;
 	border-bottom: 2px solid #EEE;
 	margin: 0.2em 0 0.6em 0;
+	height: 80px;
 }
 
 .header h1 {
@@ -29,6 +30,24 @@
 	font-size: 0.9em;
 }
 
+.content .story.big {
+	border-right: 1px solid #DDD;
+	padding-right: 15px;
+	float: left;
+	width: 640px;
+}
+
+.content .story.small {
+	float: left;
+	width: 305px;
+	height: 140px;
+	padding: 0 15px;
+	border-right: 1px solid #DDD;
+}
+
+.content .story.small .box {
+}
+
 .content .story a {
 	display: block;
 	text-decoration: none;
@@ -42,6 +61,11 @@
 	margin: 0;
 	padding: 0.4em 0 0.2em 0;
 	font-size: 2em;
+	line-height: 1.3em;
+}
+
+.content .story.small .title {
+	font-size: 1.2em;
 }
 
 .content .story .lead {
