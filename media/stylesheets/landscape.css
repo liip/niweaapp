@@ -2,6 +2,20 @@
 	border-bottom: 0;
 }
 
+.content .story.big img {
+	width: 640px;
+	height: 385px;
+}
+
+.content .story.small:nth-child(2) .title {
+	padding-top: 0;
+}
+
+.content .story.small:last-child {
+	border-bottom: 0;
+}
+
 .content .story.small {
 	border-right: 0;
+	border-bottom: 1px solid #DDD;
 }

@@ -1,3 +1,32 @@
 .content .story.big {
+	position: relative;
+	width: 720px;
+	padding-top: 395px;
+	border-right: 0;
+}
+
+.content .story.big img {
+	width: 735px;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	clip: rect(10px, 735px, 395px, 0px);
+}
+
+.content .story.small {
+	width: 345px;
+	border-bottom: 1px solid #DDD;
+}
+
+.content .story.small:last-child,
+.content .story.small:nth-child(4) {
+	border-bottom: 0;
+}
+
+.content .story.small:nth-child(even) {
+	padding-left: 0;
+}
+
+.content .story.small:nth-child(odd) {
 	border-right: 0;
 }
