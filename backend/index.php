@@ -77,7 +77,7 @@ class tagiProxy {
 		
 		foreach($this->rss->channel->item as $item){
 			// do nothing with picturegalleries right now.. first just articles
-			if((string)$item->attributes()->type == "picturegalleries"){
+			if($item['type'] == "picturegalleries"){
 				$galleries = $item;
 				break;
 			}
