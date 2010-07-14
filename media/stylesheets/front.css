@@ -66,6 +66,10 @@
 	line-height: 1.3em;
 }
 
+.container.story .content .title {
+	color: #111;
+}
+
 .content .story.small .title {
 	font-size: 1.2em;
 }
@@ -74,6 +78,11 @@
 	display: block;
 	margin: 0 0 1em 0;
 	font-size: 0.95em;
+}
+
+.container.story .content .story .lead {
+	font-size: 1.4em;
+	line-height: 1.4em;
 }
 
 .content img {
