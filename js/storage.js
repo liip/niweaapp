@@ -51,6 +51,11 @@ NIWEA.Storage = function () {
 		refreshContent();
 	}
 	
+	var showStoryClick = function() {
+		console.log($(this).attr("id"));
+				application.setAddress("page/story?id="+$(this).attr("id"));
+	}
+	
 	var drawCategory = function (id) {
 		var data = getJsonFromStorage(id);
 		// do the actual drawing here
@@ -60,7 +65,8 @@ NIWEA.Storage = function () {
 			for (var i = 0;  i < data.items.length; i++) {
 				var node = nodes.eq(i);;
 				if (node && data.items[i].title ) {
-					
+					node.unbind("click",showStoryClick);
+					node.bind("click",showStoryClick);
 					$(".title",node).html(data.items[i].title);
 					$(".lead",node).text(data.items[i].shortlead);
 					node.attr("id","story_" + data.items[i].id);
