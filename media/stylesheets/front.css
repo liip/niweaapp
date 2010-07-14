@@ -32,7 +32,9 @@
 
 .content .story.big {
 	border-right: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
 	padding-right: 15px;
+	margin-bottom: 15px;
 	float: left;
 	width: 640px;
 }
