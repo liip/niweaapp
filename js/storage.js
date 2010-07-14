@@ -44,16 +44,18 @@ NIWEA.Storage = function () {
 	var drawCategory = function (id) {
 		var data = getJsonFromStorage(id);
 		// do the actual drawing here
-		var nodes = $('.content div');
 		if (data && data.items) {
+			var nodes = $('.content div');
+		
 			for (var i = 0;  i < data.items.length; i++) {
-				var node = nodes[i];
+				var node = nodes.eq(i);;
 				if (node && data.items[i].title ) {
-					$("a .title",node).text(data.items[i].title);
-					$("a .lead",node).text(data.items[i].shortlead);
-					$("a",node).attr("href","#story_" + data.items[i].id);
+					
+					$(".title",node).html(data.items[i].title);
+					$(".lead",node).text(data.items[i].shortlead);
+					node.attr("id","story_" + data.items[i].id);
 					if (i == 0) {
-						$("a  img",node).attr("src",data.items[i].image_big_ipad);	
+						$("img",node).attr("src",data.items[i].image_big_ipad);	
 					}
 				} else { 
 			}
