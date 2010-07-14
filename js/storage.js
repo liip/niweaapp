@@ -21,10 +21,12 @@ NIWEA.Storage = function () {
 		
 		if (status == 'success') {
 			var id = data.id;
-			/*var channel = data.items;
-			var cat = {};
-			cat.items = [];
-			for (var i = 0; i <  data.items.length; i++) {
+			if (id == 0) {
+			  data.category ="Front";	
+			} else if (data.items[0]) {
+				 data.category = data.items[0].category;
+			}
+			/*for (var i = 0; i <  data.items.length; i++) {
 				cat.items[i] =  data.items[i];
 			}*/
 			putJsonToStorage(data,id);
@@ -62,6 +64,12 @@ NIWEA.Storage = function () {
 		if (data && data.items) {
 			//only draw, if there's a "big" element
 			if ($('.big').length) {
+				
+				var cat = $('.category').eq(0); 
+				cat.text(data.category);
+				cat.unbind("click");
+				cat.click(function() {application.setAddress('page/category?id='+data.id);});
+				
 				var nodes = $('.content div');
 				for (var i = 0;  i < data.items.length; i++) {
 					var node = nodes.eq(i);;
@@ -129,7 +137,7 @@ NIWEA.Storage = function () {
 		try {
 			localStorage.setItem("category"+id,JSON.stringify(data));
 		} catch (e) {
-			if (e == QUOTA_EXCEEDED_ERR) {
+			if (e == 'QUOTA_EXCEEDED_ERR') {
 				alert('Quota exceeded!'); //data wasn't successfully saved due to quota exceed so throw an error
 			}
 		}

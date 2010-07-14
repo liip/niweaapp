@@ -17,11 +17,16 @@
 			<div class="header">
 				<h1 class="logo" >
 
-					<img onclick="application.setAddress('page/category');" src="media/images/logo.png" width="300" height="61" alt="Tages-Anzeiger" />
+					<img onclick="application.setAddress('page/category?id=0');" src="media/images/logo.png" width="300" height="61" alt="Tages-Anzeiger" />
 				</h1>
-				<h2 class="category" onclick="application.setAddress('page/category');">Front</h2>
+				<h2 class="category" >Front</h2>
 				
-				<p class="date"><span onclick="application.setAddress('page/category?id=1')">1</span>
+				<p class="date">
+				<!--ugly -->
+				
+				<span onclick="application.setAddress('page/category?id=0')">0</span>
+				
+				<span onclick="application.setAddress('page/category?id=1')">1</span>
 				<span onclick="application.setAddress('page/category?id=2')">2</span>
 				<span onclick="application.setAddress('page/category?id=3')">3</span>
 				<span onclick="application.setAddress('page/category?id=4')">4</span>
