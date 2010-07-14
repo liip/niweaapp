@@ -1,3 +1,8 @@
+.container {
+	padding: 0.6em 1em;
+	overflow: auto;
+}
+
 .header {
 	position: relative;
 	border-bottom: 2px solid #EEE;
