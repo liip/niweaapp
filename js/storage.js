@@ -26,6 +26,9 @@ NIWEA.Storage = function () {
 			} else if (data.items[0]) {
 				 data.category = data.items[0].category;
 			}
+			
+			
+			//console.log('<option value="'+id+'">'+data.category+'</option>');
 			/*for (var i = 0; i <  data.items.length; i++) {
 				cat.items[i] =  data.items[i];
 			}*/
@@ -66,9 +69,10 @@ NIWEA.Storage = function () {
 			if ($('.big').length) {
 				
 				var cat = $('.category').eq(0); 
-				cat.text(data.category);
-				cat.unbind("click");
-				cat.click(function() {application.setAddress('page/category?id='+data.id);});
+				cat.val(data.id);
+				var logo = $('#logo');
+				logo.unbind("click");
+				logo.click(function() {application.setAddress('page/category?id='+data.id);});
 				
 				var nodes = $('.content div');
 				for (var i = 0;  i < data.items.length; i++) {

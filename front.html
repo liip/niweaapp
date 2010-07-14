@@ -17,21 +17,28 @@
 			<div class="header">
 				<h1 class="logo" >
 
-					<img onclick="application.setAddress('page/category?id=0');" src="media/images/logo.png" width="300" height="61" alt="Tages-Anzeiger" />
+					<img id="logo"  src="media/images/logo.png" width="300" height="61" alt="Tages-Anzeiger" />
 				</h1>
-				<h2 class="category" >Front</h2>
+				<h2 class="category" >
+				<select id="category" onclick="application.setAddress('page/category?id=' + $(this).val())">
+				<option value="0">Front</option>
+				<option value="1">Zürich</option>
+				<option value="2">Schweiz</option>
+				<option value="3">Ausland</option>
+				<option value="4">Wirtschaft</option>
+				<option value="5">Panorama</option>
+				<option value="6">Digital</option>
+				<option value="7">Wissen</option>
+				<option value="8">Sport</option>
+				<option value="9">Kultur</option>
+				<option value="10">Leben</option>
+				</select>
+				</h2>
 				
 				<p class="date">
 				<!--ugly -->
 				
-				<span onclick="application.setAddress('page/category?id=0')">0</span>
 				
-				<span onclick="application.setAddress('page/category?id=1')">1</span>
-				<span onclick="application.setAddress('page/category?id=2')">2</span>
-				<span onclick="application.setAddress('page/category?id=3')">3</span>
-				<span onclick="application.setAddress('page/category?id=4')">4</span>
-				<span onclick="application.setAddress('page/category?id=5')">5</span>
-				<span onclick="application.setAddress('page/category?id=6')">6</span>
 								Mittwoch, 14. Juli 2010</p>
 
 								
