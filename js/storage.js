@@ -5,6 +5,7 @@ NIWEA.Storage = function () {
 	var categoryCount = 0;
 	var myPrivateVar = "I can be accessed only from within YAHOO.myProject.myModule."
 	var categories = {}
+	var stories = [];
 	
 	//"private" method:
 	var myPrivateMethod = function () {
@@ -31,7 +32,16 @@ NIWEA.Storage = function () {
 	}
 	
 	var getJsonFromStorage = function(id) {
-		return JSON.parse(localStorage.getItem("category"+id));
+		var data = JSON.parse(localStorage.getItem("category"+id));
+		
+		if (data && data.items) {
+			for(var i = 0; i < data.items.length; i++) {
+				var item = data.items[i];
+				stories[item.id] = item;
+			}
+		}
+		
+		return data;
 	}
 	
 	var initContent = function() {
@@ -84,6 +94,14 @@ NIWEA.Storage = function () {
 		myPublicProperty: "I'm accessible as YAHOO.myProject.myModule.myPublicProperty.",
 		init: function () {
 			initContent();
+		},
+		
+		getStory: function(id) {
+			if (stories[id]) {
+				return stories[id];
+			} else {
+				return null;
+			}
 		},
 		
 		
