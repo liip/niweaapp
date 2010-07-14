@@ -15,13 +15,14 @@
 	<body>
 		<div class="container">
 			<div class="header">
-				<h1 class="logo">
+				<h1 class="logo" onclick="application.setAddress('page/category');">
+
 					<img src="media/images/logo.png" width="300" height="61" alt="Tages-Anzeiger" />
 				</h1>
 				<h2 class="category">Front</h2>
 				<p class="date">Mittwoch, 14. Juli 2010</p>
 			</div>
-			<div class="content">
+			<div class="content" id="content">
 				<div class="story big">
 					<img src="media/images/picture_big.jpg" alt="" />
 					<h2 class="title">Beamte müssen iPhones abgeben</h2>
@@ -47,9 +48,11 @@
 		</div>
 		<script type="text/javascript" charset="utf-8" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/jquery.address-1.2.1.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/iDevice.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/json2-min.js"></script>
 		
 		<script type="text/javascript" charset="utf-8" src="js/storage.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/iDevice.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="js/modules.js"></script>
 	</body>
 </html>

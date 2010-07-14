@@ -52,8 +52,7 @@ NIWEA.Storage = function () {
 	}
 	
 	var showStoryClick = function() {
-		console.log($(this).attr("id"));
-				application.setAddress("page/story?id="+$(this).attr("id"));
+		application.setAddress("page/story?id="+$(this).attr("id"));
 	}
 	
 	var drawCategory = function (id) {
@@ -61,23 +60,67 @@ NIWEA.Storage = function () {
 		// do the actual drawing here
 		if (data && data.items) {
 			var nodes = $('.content div');
-		
+			
 			for (var i = 0;  i < data.items.length; i++) {
 				var node = nodes.eq(i);;
-				if (node && data.items[i].title ) {
+				var item = data.items[i];
+				if (node && item.title ) {
 					node.unbind("click",showStoryClick);
 					node.bind("click",showStoryClick);
-					$(".title",node).html(data.items[i].title);
-					$(".lead",node).text(data.items[i].shortlead);
-					node.attr("id","story_" + data.items[i].id);
+					$(".title",node).html(item.title);
+					
+					
+					
+					$(".lead",node).text(item.shortlead);
+					
+					
+					
+					node.attr("id","story_" + item.id);
 					if (i == 0) {
-						$("img",node).attr("src",data.items[i].image_big_ipad);	
+						$("img",node).attr("src",item.image_big_ipad);	
 					}
 				} else { 
+				}
 			}
 		}
+	}
+	
+	var drawStory = function(id) {
+		var data = getStory(id);
+		if (data) {
+			var nodes = $('.content .story');
+			
+			var item = data;
+			var node = nodes.eq(0);;
+			if (node && item.title ) {
+				node.unbind("click",showStoryClick);
+				node.bind("click",showStoryClick);
+				$(".title",node).html(item.title);
+				
+				
+				
+				$(".lead",node).text(item.lead);
+				
+				
+				
+				node.attr("id","story_" + item.id);
+				$("img",node).attr("src",item.image_big_ipad);
+					$(".text",node).html(item.text.replace(/\n/g,"<br/>"));
+			} else { 
+			}
 		}
 	}
+	
+	
+	
+	var getStory = function(id) {
+		if (stories[id]) {
+			return stories[id];
+		} else {
+			return null;
+		}
+	}
+	
 	
 	var putJsonToStorage = function(data, id) {
 		try {
@@ -102,13 +145,6 @@ NIWEA.Storage = function () {
 			initContent();
 		},
 		
-		getStory: function(id) {
-			if (stories[id]) {
-				return stories[id];
-			} else {
-				return null;
-			}
-		},
 		
 		
 		
@@ -122,7 +158,17 @@ NIWEA.Storage = function () {
 			//The native scope of myPublicMethod is myProject; we can
 			//access public members using "this":
 			YAHOO.log(this.myPublicProperty);
+		},
+		
+		updateStory: function(id) {
+			drawStory(id);
+		},
+		
+		updateCategory: function(id) {
+			drawCategory(id);
 		}
+		
+		
 	};
 	
 }(); // the parens here cause the anonymous function to execute and return
