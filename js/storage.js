@@ -14,7 +14,7 @@ NIWEA.Storage = function () {
 	
 	var getJsonFromServer = function (id) {
 		
-		$.getJSON( '/backend/index.php?mode=cat&id='+id, handleJsonFromServer );
+		$.getJSON( './backend/index.php?mode=cat&id='+id, handleJsonFromServer );
 	}
 	
 	var handleJsonFromServer = function(data, status) {
