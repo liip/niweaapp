@@ -7,33 +7,44 @@ error_reporting (E_ALL);
 
 class tagiProxy {
 
-	private $feed = "http://www.tagesanzeiger.ch/mobile/ipad.html?pw=Iatgof100&amp;type=category&amp;ipad=1&amp;category_id=";
+	private $catfeed = "http://www.tagesanzeiger.ch/mobile/ipad.html?pw=Iatgof100&amp;type=category&amp;ipad=1&amp;category_id=";
+	private $storyfeed = "http://www.tagesanzeiger.ch/mobile/feed.html?pw=Iatgof100&type=story&story_id=";
 	private $categoryIds = array(0,1,2,3,4,5,6,7,4269);
 	private $errors = array("noid" => "no category id given!", "invalidid" => "invalid category id");
-	public $catId;
+	public $id;
+	public $mode;
 	private $rss;
 	private $items = array();
 	
-	public function getJsonByCategoryId($catId){
-		if($this->parseInput($catId)){			
-			$this->getRssByCategoryId($this->catId);	
+	public function getJsonByCategoryId($id, $mode){
+		if($this->parseInput($id, $mode)){			
+			$this->getRssByCategoryId($this->id, $this->mode);	
 		}		
 	}
 	
-	private function parseInput($catId){
-		
-		if(!isset($catId)){
+	private function parseInput($id, $mode){
+		// id check
+		if(!isset($id)){
 			$this->throwError("noid");
 			return false;
 		}
 		
-		else if(!is_numeric($catId)){
+		if(!is_numeric($id)){
 			$this->throwError("invalidid");
 			return false;
 		}
 		
-		else {
-			$this->catId = $id = intval($_GET['catId']);	
+		$this->id = $id = intval($_GET['id']);
+		
+		// mode check		
+		switch ($mode) {
+		case "story":
+			$this->mode = "story";
+			break;
+		case "cat":
+			$this->mode = "cat";
+			break;
+		default: return false;
 		}
 		return true;
 		
@@ -41,7 +52,9 @@ class tagiProxy {
 	
 	
 	private function getRssByCategoryId(){		
-		$this->rss = simplexml_load_file("{$this->feed}{$this->catId}");
+		
+		$feedvar = $this->mode."feed";
+		$this->rss = simplexml_load_file("{$this->$feedvar}{$this->id}");
 		$this->rss2Array();
 		
 		// header("Content-type: application/json");
@@ -51,7 +64,7 @@ class tagiProxy {
 	
 	private function array2Json(){
 		$overall = array();
-		$overall['catid'] = $this->catId;
+		$overall['id'] = $this->id;
 		$overall['items'] = $this->items;		
 		return(json_encode($overall));
 	}
@@ -76,14 +89,14 @@ class tagiProxy {
 	
 	private function throwError($key){
 		// TODO 
-		header("HTTP/1.0 404 Not Found");  
+		// header("HTTP/1.0 404 Not Found");  
 	}
 	
 
 };
 
 $tagiProxy = new tagiProxy();
-$tagiProxy->getJsonByCategoryId($_GET['catId']);
+$tagiProxy->getJsonByCategoryId($_GET['id'], $_GET['mode']);
 
 
 
