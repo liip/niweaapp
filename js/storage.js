@@ -2,7 +2,7 @@
 NIWEA = {}
 NIWEA.Storage = function () {
 	//"private" variables:
-	var categoryCount = 1;
+	var categoryCount = 0;
 	var myPrivateVar = "I can be accessed only from within YAHOO.myProject.myModule."
 	var categories = {}
 	
@@ -13,14 +13,13 @@ NIWEA.Storage = function () {
 	
 	var getJsonFromServer = function (id) {
 		
-		$.getJSON( '/getjson.php?catId='+id, handleJsonFromServer );
+		$.getJSON( '/backend/index.php?mode=cat&id='+id, handleJsonFromServer );
 	}
 	
 	var handleJsonFromServer = function(data, status) {
 		
 		if (status == 'success') {
-			console.log(data);
-			var id = data.catid;
+			var id = data.id;
 			/*var channel = data.items;
 			var cat = {};
 			cat.items = [];
@@ -45,18 +44,19 @@ NIWEA.Storage = function () {
 	var drawCategory = function (id) {
 		var data = getJsonFromStorage(id);
 		// do the actual drawing here
+		var nodes = $('.content div');
 		for (var i = 0;  i < data.items.length; i++) {
-			if (data.items[i].title ) {
-				console.log(data.items[i].title + "<br/>");
+			var node = nodes[i];
+			if (node && data.items[i].title ) {
+				$("a .title",node).text(data.items[i].title);
+				$("a .lead",node).text(data.items[i].shortlead);
 			} else { 
-				console.log(data.items[i]);
 			}
 		}
 	}
 	
 	var putJsonToStorage = function(data, id) {
 		try {
-			console.log("save",id,data);
 			localStorage.setItem("category"+id,JSON.stringify(data));
 		} catch (e) {
 			if (e == QUOTA_EXCEEDED_ERR) {
