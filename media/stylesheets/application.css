@@ -14,3 +14,16 @@
     top: 120px;
     width: 200px;
 }
+
+div.category {
+	float: left;
+}
+
+#window {
+	overflow: hidden;
+}
+
+#pages {
+	position: relative;
+	top: 0px;
+}
