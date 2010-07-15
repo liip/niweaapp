@@ -58,7 +58,7 @@
 				// we don't want this function to be called twice
 				that.init = function () {};
 				
-				$('#logo').click(function() {application.setAddress('page/category?id=0')});
+				$('#logo').click(function() {application.setAddress('page/category?id=0');});
 				
 				$('#category').change(function () {
 					application.setAddress('page/category?id=' + $(this).val());
