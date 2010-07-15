@@ -435,17 +435,15 @@
 			
 			content = $('#content');
 			
-			content.html('<div class="story"><h2 class="title"></h2><p class="lead"/><img/><div class="text"/><div class="context_stories"></div>');
+			content.html('<div class="long story"><h2 class="title"></h2><p class="lead"/><div class="img"><img /><span class="legend"> </span></div><div class="text"/><div class="context_stories"></div>');
 			
 			content.find('h2').text(item.title);
 			content.find('p.lead').text(item.lead);
 			content.find('div.text').html(item.text.replace(/\n/g,"<br/>"));
-			
+			content.find('.legend').html("<br/>"+item.topelement_image_legend);
 			if (item.image_big_ipad) {
 				// ADD AN IMAGE, IF ONE IS GIVEN
-				content.find('p.lead')
-					.after('<img/>')
-					.next()
+				content.find('img')
 					.attr('src', item.image_big_ipad);
 			}
 			

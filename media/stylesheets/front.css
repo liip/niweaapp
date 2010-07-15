@@ -1,3 +1,7 @@
+* {
+	font-size: 1em;
+}
+
 .container {
 	padding: 0.6em 1em;
 	overflow: auto;
@@ -38,6 +42,18 @@
 	color: #666;
 	font-size: 0.9em;
 }
+
+.content .story.long {
+	max-width: 1010px;
+	text-align: justify;
+	font-size: 1em;
+	padding-right: 10px
+}
+
+.title {
+	text-align: left;
+}
+
 
 .content .story.big {
 	border-right: 1px solid #DDD;
@@ -81,17 +97,30 @@
 .content .story .lead {
 	display: block;
 	margin: 0 0 1em 0;
-	font-size: 0.95em;
+	font-size: 1em;
 }
 
-.container.story .content .story .lead {
+
+.content .story.long .lead {
 	font-size: 1.4em;
 	line-height: 1.4em;
 }
 
-.container.story .content .story img {
-	width: 735px;
+
+.content .story.long .img {
+	margin-bottom: 10px;
 }
+
+.content .story.long .img .legend {
+  color: #444; 
+}
+
+
+.text {
+	font-size: 1.25em;
+	line-height: 1.3em;
+}
+
 
 .content img {
 	margin: 0;

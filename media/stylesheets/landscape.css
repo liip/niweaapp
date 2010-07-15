@@ -19,3 +19,19 @@
 	border-right: 0;
 	border-bottom: 1px solid #DDD;
 }
+
+.content .story.long .text {
+	padding-left: 340px;
+
+}
+
+.content .story.long img {
+	width: 320px;
+}
+
+.content .story.long .img {
+	float: left;
+	width: 320px;
+	padding-right: 20px;
+}
+
