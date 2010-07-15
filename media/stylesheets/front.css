@@ -28,6 +28,10 @@
 	font-weight: normal;
 }
 
+.header h2 select {
+	font-size: 0.6em;
+}
+
 .header p {
 	right: 0;
 	margin-bottom: 0.5em;
