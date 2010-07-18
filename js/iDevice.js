@@ -435,7 +435,7 @@
 			
 			content = $('#content');
 			
-			content.html('<div class="long story"><h2 class="title"></h2><p class="lead"/><div class="img"><img /><span class="legend"> </span></div><div class="text"/><div class="context_stories"></div>');
+			content.html('<div class="long story"><div class="img"><img /><span class="legend"> </span></div><h2 class="title"></h2><p class="lead"/><div class="text"/><div class="context_stories"></div>');
 			
 			content.find('h2').text(item.title);
 			content.find('p.lead').text(item.lead);
