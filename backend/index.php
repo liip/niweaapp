@@ -83,7 +83,7 @@ class tagiProxy {
 			}
 		
 			$lead = $item->lead;
-			$shortlead = substr($lead, 0, 110)."...";
+			$shortlead = substr($lead, 0, 105)."...";
 			$itm = array();
 			foreach($item as $k => $v){
 				
