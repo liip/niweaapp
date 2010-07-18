@@ -439,7 +439,7 @@
 			
 			content.find('h2').text(item.title);
 			content.find('p.lead').text(item.lead);
-			content.find('div.text').html(item.text.replace(/\n/g,"<br/>"));
+			content.find('div.text').html(item.text);
 			content.find('.legend').html("<br/>"+item.topelement_image_legend);
 			if (item.image_big_ipad) {
 				// ADD AN IMAGE, IF ONE IS GIVEN

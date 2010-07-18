@@ -3,7 +3,7 @@
 ini_set("display_errors", 1);
 error_reporting (E_ALL);
 
-
+require_once 'classTextile.php';
 
 class tagiProxy {
 
@@ -74,7 +74,7 @@ class tagiProxy {
 	private function rss2Array(){
 		// vereinfachen, shorten
 		
-		
+		$textile = new Textile();
 		foreach($this->rss->channel->item as $item){
 			// do nothing with picturegalleries right now.. first just articles
 			if($item['type'] == "picturegalleries"){
@@ -100,6 +100,8 @@ class tagiProxy {
 						array_push($ar, array("context_id" => trim((string)$_v->context_id), "context_title" => trim((string)$_v->context_title), "context_url" => trim((string)$_v->context_url)));
 					}
 					$itm[$k] = $ar;
+				} else if ($k == 'text') {
+					$itm[$k] = $textile->TextileThis($v);
 				}
 				
 				else{

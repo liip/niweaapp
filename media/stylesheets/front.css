@@ -100,21 +100,51 @@
 	font-size: 1em;
 }
 
+.content .story.long .title {
+	float: right;
+	width: 48%;
+}
 
 .content .story.long .lead {
 	font-size: 1.4em;
 	line-height: 1.4em;
+	float: right;
+	width: 48%;
+	clear: right;
 }
 
-
 .content .story.long .img {
+	float: left;
+	width: 48%;
+	margin-right: 26px;
+	margin-top: 20px;
 	margin-bottom: 10px;
+}
+
+.content .story.long .img img {
+	width: 100%;
 }
 
 .content .story.long .img .legend {
   color: #444; 
 }
 
+.content .story.long .text {
+	clear: both;
+	-moz-column-count: 2;
+	-moz-column-gap: 30px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 30px;
+	column-count: 2;
+	column-gap: 30px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.content .story.long .text p {
+	margin: 0 0 1em 0;
+	line-height: 1.4em;
+}
 
 .text {
 	font-size: 1.25em;
