@@ -31,3 +31,14 @@
 .content .story.small:nth-child(odd) {
 	border-right: 0;
 }
+
+.content .story.long .img {
+	width: 48%;
+}
+
+.content .story.long .text {
+	float: none;
+	width: auto;
+	clear: both;
+}
+

@@ -39,7 +39,7 @@
 .header p {
 	right: 0;
 	margin-bottom: 0.5em;
-	color: #666;
+	color: #999;
 	font-size: 0.9em;
 }
 
@@ -101,44 +101,37 @@
 }
 
 .content .story.long .title {
-	float: right;
-	width: 48%;
+	margin-bottom: 0.1em;
 }
 
 .content .story.long .lead {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	line-height: 1.4em;
-	float: right;
-	width: 48%;
-	clear: right;
+	font-style: italic;
 }
 
 .content .story.long .img {
-	float: left;
-	width: 48%;
-	margin-right: 26px;
+	float: right;
+	width: 38%;
+	margin-left: 28px;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
 .content .story.long .img img {
 	width: 100%;
+	min-height: 150px;
 }
 
 .content .story.long .img .legend {
-  color: #444; 
+	color: #777; 
 }
 
 .content .story.long .text {
-	clear: both;
-	-moz-column-count: 2;
-	-moz-column-gap: 30px;
-	-webkit-column-count: 2;
-	-webkit-column-gap: 30px;
-	column-count: 2;
-	column-gap: 30px;
 	padding-top: 10px;
 	padding-bottom: 20px;
+	float: left;
+	width: 59%;
 }
 
 .content .story.long .text h2,
@@ -148,9 +141,7 @@
 }
 
 .content .story.long .text h2 {
-	-webkit-column-break-before: avoid;
-	-moz-column-break-after: avoid;
-	column-break-after: avoid;
+	margin: 2em 0 0.5em 0;
 }
 
 .text {
