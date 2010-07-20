@@ -144,6 +144,16 @@
 	margin: 2em 0 0.5em 0;
 }
 
+.content .story.long .text h2:first-child {
+	margin-top: 0;
+}
+
+.content .story.long .text #contentbox h4,
+.content .story.long .text #contentbox p {
+	margin-left: 10px;
+	margin-right: 15px;
+}
+
 .text {
 	font-size: 1.25em;
 	line-height: 1.3em;
