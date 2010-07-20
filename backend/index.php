@@ -83,7 +83,8 @@ class tagiProxy {
 			}
 		
 			$lead = $item->lead;
-			$shortlead = substr($lead, 0, 105)."...";
+			$shortlead = substr($lead, 0, 105) . "…";
+
 			$itm = array();
 			foreach($item as $k => $v){
 				
@@ -112,6 +113,15 @@ class tagiProxy {
 				
 			}
 			$itm['shortlead'] = $shortlead;
+			
+			$shorttitle = trim($item->title);
+			
+			$max = 60;
+			if (strlen($shorttitle) > $max) {
+				$shorttitle = substr($shorttitle, 0, $max) . "…";
+			}
+			$itm['shorttitle'] = $shorttitle;
+			
 			array_push($this->items, $itm);			
 		}
 		

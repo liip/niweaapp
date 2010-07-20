@@ -543,6 +543,7 @@
 				
 				for (i = 0; i < 5; i += 1) {
 					item = data.items[i];
+					title = item.shorttitle ? item.shorttitle : item.title;
 					div.addClass('content')
 						// ADD STORY CONTAINER
 						.append('<div class="story small"></div>')
@@ -553,7 +554,7 @@
 						.click(getCallback(item))
 						// ADD STORY TITLE
 						.children(':first')
-						.text(item.title)
+						.text(title)
 						// ADD STORY CONTENT
 						.next()
 						.text(item.shortlead);
