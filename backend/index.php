@@ -116,9 +116,9 @@ class tagiProxy {
 			
 			$shorttitle = trim($item->title);
 			
-			$max = 60;
+			$max = 45;
 			if (strlen($shorttitle) > $max) {
-				$shorttitle = substr($shorttitle, 0, $max) . "…";
+				$shorttitle = substr($shorttitle, 0, $max - 3) . "…";
 			}
 			$itm['shorttitle'] = $shorttitle;
 			
