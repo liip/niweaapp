@@ -570,7 +570,10 @@
 					.prepend('<img width="640" height="385"/>')
 					.children()
 					.first()
-					.attr("src",item.image_big_ipad);
+					.attr("src",item.image_big_ipad)
+					// REPLACE SHORT TITLE WITH FULL TITLE FOR LEAD
+					.next()
+					.text(item.title);
 			}
 		};
 		
