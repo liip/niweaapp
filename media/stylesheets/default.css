@@ -8,3 +8,7 @@ body {
 .big, .small {
 	cursor: pointer;
 }
+
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0, 0.07)
+}
