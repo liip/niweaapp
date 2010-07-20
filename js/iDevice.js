@@ -263,7 +263,7 @@
 				}
 	
 				Storage.init();
-	
+
 				container.width((i * $('body').width()) + 100);
 			},
 			hide: function () {
@@ -303,28 +303,40 @@
 				logo = $('#logo');
 				logo.unbind("click");
 				logo.click(function() {application.setAddress('page/category?id=' + parameters.id);});
+
+				$(window).bind('orientationchange', this.handleRotate);
 				
 				slideTo(id, duration);
 			},
 			handleTouch: function(e) {
-				var $el, startX, startY, startTime, deltaX, deltaY, deltaT, touchMove, touchEnd, updateTouch;
+				var $el, startX, startY, startTime, deltaX, deltaY, deltaT, touchMove, touchEnd, updateTouch, foo;
 				
 				$el = $(e.target);
+				foo = $('#pages').position().left;
 				
 				touchMove = function (e) {
+					
+					// prevent scroll
+					e.preventDefault();
+					
+					updateTouch();
+					
+					$('#pages').css('left', foo + deltaX);
+				};
+	
+				touchEnd = function () {
 					var absX, absY, swipeLength;
 					
 					updateTouch();
-	
+					
 					absX = Math.abs(deltaX);
 					absY = Math.abs(deltaY);
-	
-					// User must swipe 1/5 the width of the screen to move on.
-					swipeLength = $('.current').width() / 5;
+					
+					// User must swipe 1/9 the width of the screen to move on.
+					swipeLength = $(document).width() / 9;
 	
 					// Check for swipe
-					if (absX > absY && (absX > swipeLength) && deltaT < 1000) {
-						$el.unbind('touchmove touchend');
+					if (absX > swipeLength) {
 						if (deltaX < 0) {
 							// Left swipe.
 							next();
@@ -332,11 +344,10 @@
 							// Right swipe.
 							previous();
 						}
+					} else {
+						slideTo(selected_category);
 					}
-				};
-	
-				touchEnd = function () {
-					updateTouch();
+					
 					$el.unbind('touchmove touchend');
 				};
 	
@@ -359,6 +370,16 @@
 					$el.bind('touchmove', touchMove).bind('touchend', touchEnd);
 				}
 	
+			},
+			handleRotate: function(e) {
+				var container;
+				
+				// resize container and categories to new document with
+				$('#categories').width((11 * $('body').width()) + 100);
+				$('#categories > div').width($('body').width());
+				
+				// instant switch to category
+				slideTo(selected_category, 0);
 			}
 		};
 		return that;
