@@ -102,7 +102,7 @@ class tagiProxy {
 					}
 					$itm[$k] = $ar;
 				} else if ($k == 'text') {
-					$text = str_replace('<b>', '<h2>', str_replace('</b>', '</h2>', $v));
+					$text = str_replace('<br>', "\n", str_replace('<b>', '<h2>', str_replace('</b>', '</h2>', $v)));
 					$itm[$k] = $textile->TextileThis($text);
 				}
 				
