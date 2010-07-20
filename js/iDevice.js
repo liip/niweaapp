@@ -182,10 +182,18 @@
 		var that, next, previous, slideTo, selected_category, goTo;
 		
 		next = function () {
-			goTo(selected_category + 1);
+			if (selected_category < 10) {
+				goTo(selected_category + 1);
+			} else {
+				slideTo(selected_category);
+			}
 		};
 		previous = function () {
-			goTo(selected_category - 1);
+			if (selected_category > 0) {
+				goTo(selected_category - 1);
+			} else {
+				slideTo(selected_category);
+			}
 		};
 		goTo = function (id) {
 			application.setAddress('page/category?id=' + id);
@@ -605,6 +613,7 @@
 	modules.story = {
 	    init: function(data) {
 			modules.category.hide();
+			
 			Storage.updateStory(data.id.replace(/story_/,''));
 		}
 	
