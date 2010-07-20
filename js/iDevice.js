@@ -246,6 +246,7 @@
 			
 			//application.setAddress('page/category?id=' + selected_category);
 	
+			$('#pager').attr('class', 'page-' + selected_category);
 			$('#category').val(selected_category);
 		};
 		
@@ -282,6 +283,7 @@
 					$('body').unbind('touchstart', this.handleTouch);
 					categories.hide();
 				}
+				$('#pager').hide();
 			},
 			init: function (parameters) {
 	
@@ -298,6 +300,7 @@
 					categories.show();
 					$('body').bind('touchstart', this.handleTouch);
 				}
+				$('#pager').show();
 				
 				if ('number' === typeof selected_category && 1 === Math.pow(selected_category - id, 2)) {
 					// the back button has been used, we want a sliding effect...
