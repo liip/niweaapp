@@ -436,8 +436,11 @@
 		
 		getJsonFromStorage = function(id) {
 			var data, i, item;
-			data = JSON.parse(localStorage.getItem("category"+id));
-			
+			try {
+				data = JSON.parse(localStorage.getItem("category"+id));
+			} catch (e) {
+				data = null;
+			}
 			if (data && data.items) {
 				for(i = 0; i < data.items.length; i += 1) {
 					item = data.items[i];
