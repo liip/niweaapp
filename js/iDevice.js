@@ -491,7 +491,8 @@
 			//}
 			Hyphenator.config({
 				classname : 'long',
-				donthyphenateclassname: 'title'
+				donthyphenateclassname: 'title',
+				remoteloading : false
 				
 			});
 			Hyphenator.run();
