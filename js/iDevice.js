@@ -1,6 +1,19 @@
 /*jslint white: false, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, strict: true, newcap: true, immed: true */
 /*global $, PhoneGap, history, window, device, localStorage, navigator, alert, setTimeout, event*/
 "use strict";
+
+// define console.log, if it doesn't exist to avoid errors 
+//please leave this at the beginning and don't put any console.log before this definition
+if (!window.console || !console.firebug)
+{
+	var names = ["log", "debug", "info", "warn", "error"];
+	
+	window.console = {};
+	for (var i = 0; i < names.length; ++i) {
+		window.console[names[i]] = function() {};
+	}
+}
+
 (function () {
 	var modules, application, Storage;
 	
@@ -659,3 +672,4 @@ Hyphenator.languages.de = {
 		13 : "_er8stritten_"
 	}
 };
+
