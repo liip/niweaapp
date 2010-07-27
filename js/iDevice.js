@@ -417,7 +417,7 @@
 		
 		handleJsonFromServer = function(data, status) {
 			
-			if (status === 'success') {
+			if (status === 'success' && data) {
 				var id = data.id;
 				if (id === 0) {
 				  data.category ="Front";	
