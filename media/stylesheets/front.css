@@ -100,39 +100,43 @@
 }
 
 #pager.page-1 {
-	background-position: center -60px;
+	background-position: center -30px;
 }
 
 #pager.page-2 {
-	background-position: center -90px;
+	background-position: center -60px;
 }
 
 #pager.page-3 {
-	background-position: center -120px;
+	background-position: center -90px;
 }
 
 #pager.page-4 {
-	background-position: center -150px;
+	background-position: center -120px;
 }
 
 #pager.page-5 {
-	background-position: center -180px;
+	background-position: center -150px;
 }
 
 #pager.page-6 {
-	background-position: center -210px;
+	background-position: center -180px;
 }
 
 #pager.page-7 {
-	background-position: center -240px;
+	background-position: center -210px;
 }
 
 #pager.page-8 {
-	background-position: center -270px;
+	background-position: center -240px;
 }
 
 #pager.page-9 {
-	background-position: center -30px;
+	background-position: center -270px;
+}
+
+#pager.page-10 {
+	background-position: center -300px;
 }
 
 .container.story .content .title {
